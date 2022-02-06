@@ -22,4 +22,21 @@ soup = BeautifulSoup(res.text, "lxml") #가져온 html 문서를 lxml 파써를 
 # print(soup.find(attrs={"class":"Nbtn_upload"})) # class="Nbtn_upload" 인 어떤 element를 찾아줘
 #print(soup.find("li", attrs={"class":"rank01"}))
 rank1 = soup.find("li", attrs={"class":"rank01"})
-print(rank1.a)
+#print(rank1.a)
+#print(rank1.a.get_text())
+#print(rank1.next_sibling) # 해당 text 다음 출력
+#print(rank1.next_sibling.next_sibling) # 그 다음 출력
+#rank2 = rank1.next_sibling.next_sibling
+#rank3 = rank2.next_sibling.next_sibling
+#print(rank3.a.get_text())
+#rank2 = rank3.previous_sibling.previous_sibling # 해당 랭크 이전 출력
+#print(rank2.a.get_text())
+#print(rank1.parent) # 랭크 기준 부모로 이동
+#rank2 = rank1.find_next_sibling("li") # 다음으로 이동해서 찾는데 ()해당되는것을 찾기 / next_sibling을 몇번 써야할지 고민하지 않아도
+#print(rank2.a.get_text())
+#rank3 = rank2.find_next_sibling("li")
+#print(rank3.a.get_text())
+#rank2 = rank3.find_previous_sibling("li") #다음으로 이동해서 찾는데 ()해당되는것을 찾기
+#print(rank2.a.get_text())
+
+print(rank1.find_next_siblings("li")) # rank에 있는 정보들을 한번에 가져올수 있다.
